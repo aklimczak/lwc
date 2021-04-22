@@ -26,12 +26,20 @@ export default class FiveStarRating extends LightningElement {
 
   // Render callback to load the script once the component renders.
   renderedCallback() {
+    window.addEventListener('addReviewOpenEvent', this.refreshStars);
     if (this.isRendered) {
       return;
     }
     this.loadScript();
     this.isRendered = true;
   }
+
+  refreshStars = () => {
+    let stars = document.querySelectorAll(".addreview li.c-rating__item");
+    stars.forEach(function(star) {
+        star.classList.remove('is-active');
+    });
+  };
 
   //Method to load the 3rd party script and initialize the rating.
   //call the initializeRating function after scripts are loaded

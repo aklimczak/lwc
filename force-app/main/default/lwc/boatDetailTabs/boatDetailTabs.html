@@ -26,7 +26,7 @@
            <lightning-tab label={label.labelReviews} value="reviews">
               <c-boat-reviews record-id={boatId}></c-boat-reviews>
            </lightning-tab>
-           <lightning-tab label={label.labelAddReview}>
+           <lightning-tab label={label.labelAddReview} onactive={fireAddReviewOpenEvent}>
               <c-boat-add-review-form record-id={boatId} oncreatereview={handleReviewCreated}></c-boat-add-review-form>
            </lightning-tab>
          </lightning-tabset>

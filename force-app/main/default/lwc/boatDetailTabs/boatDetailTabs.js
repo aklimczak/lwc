@@ -90,4 +90,8 @@ export default class BoatDetailTabs extends NavigationMixin(LightningElement) {
       this.template.querySelector('c-boat-reviews').refresh();
     }
   }
+
+  fireAddReviewOpenEvent(){
+    window.dispatchEvent(new Event('addReviewOpenEvent'))
+  }
 }
